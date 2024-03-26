@@ -44,9 +44,14 @@ ul, li {
 		color: white;
 		border: 1px solid #00831c;
 		font-weight: bold;
-	}
-	td:hover {
-		background-color: white;
-		color: black
+		&:hover {
+			background-color: #eafffb;
+			color: black
+		}
+		a {
+			color: white;
+			display: block;
+			text-decoration: none;
+		}
 	}
 }

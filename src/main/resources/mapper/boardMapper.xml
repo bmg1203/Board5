@@ -6,8 +6,9 @@
 		SELECT BNO, MENU_ID, TITLE, WRITER, TO_CHAR(REGDATE, 'YYYY-MM-DD') REGDATE, HIT FROM BOARD WHERE MENU_ID = #{menu_id} ORDER BY BNO	DESC
 	</select>
 	
-	<insert id="">
+	<!-- /board/write -->
+	<insert id="insertBoard">
 		INSERT INTO BOARD (BNO, MENU_ID, TITLE, CONTENT, WRITER)
-		VALUES ((SELECT NVL(MAX(BNO), 0) + 1 FROM BOARD), #{menu_id}, #{title}, #{content}, #{writer});
+		VALUES ((SELECT NVL(MAX(BNO), 0) + 1 FROM BOARD), #{menu_id}, #{title}, #{content}, #{writer})
 	</insert>
 </mapper>

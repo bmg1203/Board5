@@ -58,7 +58,6 @@
 <body>
 	<!-- jstl(java standard tag library)를 사용해 목록을 출력 - c:foreach -->
 	<main>
-		<h2>메뉴 목록</h2>
 		<%@include file="/WEB-INF/include/menus.jsp"%>
 	
 		<h2>게시물 목록</h2>
