@@ -32,7 +32,6 @@
 </head>
 <body>
 	<main>
-		<a href="/"><h1>Board</h1></a>
 		<h2>메뉴 수정</h2>
 		<form action="/Menus/Update" method="get">
 			<table>

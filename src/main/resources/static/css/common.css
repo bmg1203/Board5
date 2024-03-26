@@ -20,6 +20,8 @@ table, th, td {
 	border-collapse: collapse;
 }
 
+table { width: 800px; }
+
 a {
 	text-decoration: none;
 	color: black;
@@ -30,4 +32,21 @@ a:hover {
 
 ul, li {
 	list-style: none;
+}
+
+#menu {
+	width: 800px;
+	margin: 30px 0;
+	td {
+		text-align: center;
+		padding: 15px 10px;
+		background-color: black;
+		color: white;
+		border: 1px solid #00831c;
+		font-weight: bold;
+	}
+	td:hover {
+		background-color: white;
+		color: black
+	}
 }

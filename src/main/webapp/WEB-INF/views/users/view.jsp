@@ -42,7 +42,6 @@
 </head>
 <body>
 	<main>
-		<a href="/"><h1>Board</h1></a>
 		<h2>사용자 상세 정보</h2>
 			<table>
 				<tr>

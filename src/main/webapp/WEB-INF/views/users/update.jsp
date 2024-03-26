@@ -36,7 +36,6 @@
 </head>
 <body>
 	<main>
-		<a href="/"><h1>Board</h1></a>
 		<h2>사용자 수정</h2>
 		<form action="/Users/Update" method="post">
 			<table>

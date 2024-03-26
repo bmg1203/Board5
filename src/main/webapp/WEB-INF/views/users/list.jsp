@@ -46,7 +46,6 @@
 	<!-- list.jsp 수정2 -->
 	<!-- jstl(java standard tag library)를 사용해 목록을 출력 - c:foreach -->
 	<main>
-		<a href="/"><h1>Board</h1></a>
 		<h2>사용자 목록</h2>
 		<table>
 			<tr>

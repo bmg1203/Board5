@@ -36,7 +36,6 @@
 </head>
 <body>
 	<main>
-		<a href="/"><h1>Board</h1></a>
 		<h2>사용자 등록</h2>
 		<form action="/Users/Write" method="post">
 			<table>
