@@ -5,9 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/common.css">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <style>
+ #writeform {
 	td {
 		padding: 10px;
 		width: 700px;
@@ -43,6 +45,7 @@
 	tr:nth-child(3) > td:nth-child(2) {
 		text-align: left;
 	}
+	}
 </style>
 </head>
 <body>
@@ -50,7 +53,7 @@
 		<%@include file="/WEB-INF/include/menus.jsp"%>
 		<h2>새글 등록</h2>
 		<form action="/Board/Write" method="post">
-			<table>
+			<table id="writeform">
 				<tr>
 					<td>제목</td>
 					<td><input type="text" name="title"></td>
@@ -84,8 +87,9 @@
 				</tr>
 				<tr>
 					<td colspan="4">
-						<input type="submit" value="작성">
-						<input type="button" value="목록" id="goList">
+						<input type="button" class="btn btn-primary" type="submit" value="작성">
+						<input type="button" class="btn btn-primary" value="목록" id="goList">
+						<a class="btn btn-dark" href="/" value="home">home</a>
 					</td>
 				</tr>
 			</table>
