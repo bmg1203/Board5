@@ -6,9 +6,24 @@
 		SELECT BNO, MENU_ID, TITLE, WRITER, TO_CHAR(REGDATE, 'YYYY-MM-DD') REGDATE, HIT FROM BOARD WHERE MENU_ID = #{menu_id} ORDER BY BNO	DESC
 	</select>
 	
+	<select id="getBoard" resultType="com.board.domain.BoardVo">
+		SELECT BNO, MENU_ID, TITLE, WRITER, CONTENT, TO_CHAR(REGDATE, 'YYYY-MM-DD') REGDATE, HIT FROM BOARD WHERE BNO = #{bno}
+	</select>
+	
 	<!-- /board/write -->
+	<!-- /board/write2 -->
 	<insert id="insertBoard">
 		INSERT INTO BOARD (BNO, MENU_ID, TITLE, CONTENT, WRITER)
 		VALUES ((SELECT NVL(MAX(BNO), 0) + 1 FROM BOARD), #{menu_id}, #{title}, #{content}, #{writer})
 	</insert>
+	
+	<!-- /board/update -->
+	<update id="updateBoard">
+		UPDATE BOARD SET TITLE = #{title}, CONTENT = #{content} WHERE BNO = #{bno}
+	</update>
+	
+	<!-- /board/delete -->
+	<delete id="deleteBoard">
+		DELETE FROM BOARD WHERE BNO = #{bno}
+	</delete>
 </mapper>

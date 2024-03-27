@@ -26,6 +26,7 @@
 		<hr>
 		<div><a href="/Board/List?menu_id=MENU01"">게시물 목록</a></div>
 		<div><a href="/Board/WriteForm?menu_id=MENU01">게시물 등록</a></div>
+		<div><a href="/Board/WriteForm2?menu_id=MENU01">게시물 등록2</a></div>
 	</main>
 </body>
 </html>

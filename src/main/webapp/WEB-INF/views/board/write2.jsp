@@ -10,41 +10,41 @@
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <style>
  #writeform {
-	td {
-		padding: 10px;
-		width: 700px;
-		text-align: center;
-	}
-	td:not([colspan]):first-child {
-		background-color: black;
-		color: white;
-		font-weight: bold;
-	}
-	td:nth-of-type(1) {
-		width: 200px;
-	}
-	input:not(input[type=submit], input[type=button]) {
-		width: 100%;
-	}
-	input[type=submit], input[type=button] {
-		width: 100px;
-	}
-	
-	input[readonly] {
-		background: #ebebeb;
-	}
-	
-	textarea {
-		width: 100%;
-		height: 100px;
-		overflow-y: scroll;
-	}
-	tr:nth-child(2) > td:nth-child(2) {
-		text-align: left;
-	}
-	tr:nth-child(3) > td:nth-child(2) {
-		text-align: left;
-	}
+		td {
+			padding: 10px;
+			width: 700px;
+			text-align: center;
+		}
+		td:not([colspan]):first-child {
+			background-color: black;
+			color: white;
+			font-weight: bold;
+		}
+		td:nth-of-type(1) {
+			width: 200px;
+		}
+		input:not(input[type=submit], input[type=button]) {
+			width: 100%;
+		}
+		input[type=submit], input[type=button] {
+			width: 100px;
+		}
+		
+		input[readonly] {
+			background: #ebebeb;
+		}
+		
+		textarea {
+			width: 100%;
+			height: 250px;
+			overflow-y: scroll;
+		}
+		tr:nth-child(2) > td:nth-child(2) {
+			text-align: left;
+		}
+		tr:nth-child(3) > td:nth-child(2) {
+			text-align: left;
+		}
 	}
 </style>
 </head>
@@ -52,7 +52,7 @@
 	<main>
 		<%@include file="/WEB-INF/include/menus.jsp"%>
 		<h2>새글 등록</h2>
-		<form action="/Board/Write" method="post">
+		<form action="/Board/Write2?menu_id=${menu_id}" method="post">
 			<table id="writeform">
 				<tr>
 					<td>제목</td>
@@ -60,14 +60,10 @@
 				</tr>
 				<tr>
 					<td>메뉴</td>
-					<td>
-						<select name="menu_id">
-							<option value="">===선택===</option>
-							<c:forEach var="menu" items="${menuList}">
-								<option value="${menu.menu_id}" name="${menu.menu_id}">${menu.menu_name}</option>
-							</c:forEach>
-						</select>
-					</td>
+					<!-- <td name="menu_id" value="${menu_id}">
+						${menu_id}
+					</td> -->
+					<td value="${menu_id}" name="menu_id">${menu_id}</td>
 				</tr>
 				<tr>
 					<td>작성자</td>

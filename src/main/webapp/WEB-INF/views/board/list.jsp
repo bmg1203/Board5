@@ -73,6 +73,8 @@
 				<td colspan="5">
 					[<a href="/Board/WriteForm">새 글 추가</a>]
 					&nbsp;&nbsp;&nbsp;
+					[<a href="/Board/WriteForm2?menu_id=${menu_id}">새 글 추가2</a>]
+					&nbsp;&nbsp;&nbsp;
 					[<a href="/">home</a>]
 				</td>
 			</tr>
