@@ -76,7 +76,7 @@ public class BoardController {
 		boardMapper.insertBoard(boardVo);
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/Board/List?menu_id=MENU01");
+		mv.setViewName("redirect:/Board/List");
 		
 		return mv;
 	}
@@ -115,7 +115,7 @@ public class BoardController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("menu_id", menu_id);
-		mv.setViewName("redirect:/Board/List?menu_id=MENU01");
+		mv.setViewName("redirect:/Board/List");
 		
 		return mv;
 	}

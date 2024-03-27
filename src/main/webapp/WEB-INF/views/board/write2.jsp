@@ -52,7 +52,7 @@
 <body>
 	<main>
 		<%@include file="/WEB-INF/include/menus.jsp"%>
-		<h2>새글 등록</h2>
+		<h2>새글 등록2</h2>
 		<form action="/Board/Write2?menu_id=${menu_id}" method="post">
 			<table id="writeform">
 				<tr>
