@@ -10,6 +10,10 @@
 <link rel="icon" type="image/png" href="./img/favicon.png">
 </head>
 <style>
+	h2 {
+		color: #ff81a3;
+	}
+	
 	#menu, #user, #board {
 		display: flex;
 		margin: 0;
@@ -17,6 +21,7 @@
 	#title {
 		font-weight: bold;
 		font-size: large;
+		color: #656565;
 	}
 	h2 {
 		font-weight: bold;
@@ -30,7 +35,7 @@
 </style>
 <body>
 	<main>
-		<h2>Home</h2>
+		<h2 class="stroke">Home</h2>
 		<div id="title">메뉴 옵션</div>
 		<hr style="color: #dbb1ff">
 		<div id="menu">
