@@ -126,13 +126,24 @@ public class BoardController {
 	public ModelAndView view(BoardVo boardVo) {
 		log.info("boardVo : {}", boardVo);
 		
+		//메뉴 목록 조회
+		List<MenuVo> menuList = menuMapper.getMenuList();
+		
 		//넘어온 bno 설정
 		int bno = boardVo.getBno();
+		
+		//조회수 증가(현재 BNO의 HIT += 1)
+		boardMapper.incHit(boardVo);
 		
 		//bno로 조회한 BoardVo 객체
 		BoardVo vo = boardMapper.getBoard(bno);
 		
+		//vo.content의 \n을 <br>로 바꾸기
+		String content = vo.getContent();
+		vo.setContent(content.replaceAll("\n", "<br>")); //replace 도 가능		
+		
 		ModelAndView mv = new ModelAndView();
+		mv.addObject("menuList", menuList);
 		mv.addObject("boardVo", vo);
 		mv.setViewName("/board/view");
 		
@@ -160,7 +171,7 @@ public class BoardController {
 		boardMapper.updateBoard(boardVo);
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/Board/List?menu_id=MENU01");
+		mv.setViewName("redirect:/Board/List?menu_id=" + boardVo.getMenu_id());
 		
 		return mv;
 	}
@@ -171,7 +182,7 @@ public class BoardController {
 		boardMapper.deleteBoard(boardVo);
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/Board/List?menu_id=MENU01");
+		mv.setViewName("redirect:/Board/List?menu_id=" + boardVo.getMenu_id());
 		
 		return mv;
 	}

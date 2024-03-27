@@ -15,8 +15,6 @@
 <title>board/list.jsp</title>
 <link rel="stylesheet" href="/css/common.css">
 <link rel="icon" type="image/png" href="/img/favicon.png">
-<!-- css내부에 css적용할 수 있는 scss 문법 적용 -->
-<script src="https://cdn.jsdelivr.net/npm/browser-scss@1.0.3/dist/browser-scss.min.js"></script>
 <style>
 	#board {
 		td {
@@ -54,6 +52,8 @@
 	  td:nth-child(5) {	width: 80px; }
   }
 </style>
+<!-- css내부에 css적용할 수 있는 scss 문법 적용 -->
+<script src="https://cdn.jsdelivr.net/npm/browser-scss@1.0.3/dist/browser-scss.min.js"></script>
 </head>
 <body>
 	<!-- jstl(java standard tag library)를 사용해 목록을 출력 - c:foreach -->

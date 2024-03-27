@@ -44,6 +44,7 @@
 		}
 	}	
 </style>
+<script src="https://cdn.jsdelivr.net/npm/browser-scss@1.0.3/dist/browser-scss.min.js"></script>
 </head>
 <body>
 	<main>
@@ -52,7 +53,7 @@
 			<table id="writeform">
 				<tr>
 					<td>글번호</td>
-					<td name="bno" value="${boardVo.bno}">${boardVo.bno}</td>
+					<td><input type="number" name="bno" value="${boardVo.bno}" readonly></td>
 				</tr>
 				<tr>
 					<td>제목</td>
@@ -60,11 +61,11 @@
 				</tr>
 				<tr>
 					<td>메뉴</td>
-					<td name="menu_id" value="${boardVo.menu_id}">${boardVo.menu_id}</td>
+					<td><input type="text" name="menu_id" value="${boardVo.menu_id}" readonly></td>
 				</tr>
 				<tr>
 					<td>작성자</td>
-					<td name="writer" value="${boardVo.writer}">${boardVo.writer}</td>
+					<td><input type="text" name="writer" value="${boardVo.writer}" readonly></td>
 				</tr>
 				<tr>
 					<td>내용</td>
@@ -87,7 +88,7 @@
 	
 	goListEl.addEventListener('click', function(e) {
 		//alert("Ok");
-		location.href = '/Users/List';
+		location.href = '/Board/List?menu_id=MENU01';
 	});
 </script>
 
