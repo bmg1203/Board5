@@ -53,19 +53,21 @@
 	<main>
 		<%@include file="/WEB-INF/include/menus.jsp"%>
 		<h2>새글 등록2</h2>
-		<form action="/Board/Write2?menu_id=${menu_id}" method="post">
+		<form action="/Board/Write2" method="post">
+			<!-- menu_id를 넘기기 위해서 input의 hidden 사용 -->
+			<input type="hidden" value="${menu_id}" name="menu_id">
 			<table id="writeform">
 				<tr>
 					<td>제목</td>
 					<td><input type="text" name="title"></td>
 				</tr>
-				<tr>
+				<!-- <tr>
 					<td>메뉴</td>
-					<!-- <td name="menu_id" value="${menu_id}">
+					<td name="menu_id" value="${menu_id}">
 						${menu_id}
-					</td> -->
-					<td value="${menu_id}" name="menu_id">${menu_id}</td>
-				</tr>
+					</td>
+					<td><input type="hidden" value="${menu_id}" name="menu_id"></td>
+				</tr> -->
 				<tr>
 					<td>작성자</td>
 					<td>

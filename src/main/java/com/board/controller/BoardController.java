@@ -31,20 +31,26 @@ public class BoardController {
 	// /Board/List
 	@RequestMapping("/List")
 	public ModelAndView list(MenuVo menuVo) {
-		log.info("menuVo : {}", menuVo);
-		//메뉴 아이디
-		String menu_id = menuVo.getMenu_id();		
+		log.info("[==menuVo==] : {}", menuVo);
 		
 		//메뉴 목록
 		List<MenuVo> menuList = menuMapper.getMenuList();
 		System.out.println(menuList);
 		
+		//메뉴 아이디
+		String menu_id = menuVo.getMenu_id();	
+		
+		//메뉴 정보 조회
+		MenuVo mVo = menuMapper.getMenu(menu_id); //menuMapper.getMenu(menuVo.getMenu_id()) 와 동일
+		String menu_name = mVo.getMenu_name();
+		
 		//게시물 목록
-		List<BoardVo> boardList = boardMapper.getBoardList(menuVo);
+		List<BoardVo> boardList = boardMapper.getBoardList(menuVo); //boardVo 사용으로 바꿈
 		System.out.println(boardList);
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("menu_id", menu_id);
+		mv.addObject("menu_name", menu_name);
 		mv.addObject("menuList", menuList);
 		mv.addObject("boardList", boardList);
 		mv.setViewName("board/list");
@@ -121,7 +127,7 @@ public class BoardController {
 	}
 	
 	//게시글 상세 보기
-	// /Board/View
+	// /Board/View?bno=bno
 	@RequestMapping("/View")
 	public ModelAndView view(BoardVo boardVo) {
 		log.info("boardVo : {}", boardVo);

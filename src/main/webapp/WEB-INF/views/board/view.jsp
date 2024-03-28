@@ -71,8 +71,11 @@ table {
 					<td>${boardVo.hit}</td>
 				</tr>
 				<tr>
-					<td>작성자</td>
-					<td>${boardVo.writer}</td>
+					<td>작성자, 메뉴</td>
+					<td>
+						<span>${boardVo.writer}, </span>
+						<span>${boardVo.menu_id}</span>
+					</td>
 					<td>작성일</td>
 					<td>${boardVo.regdate}</td>
 				</tr>
