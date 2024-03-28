@@ -62,7 +62,7 @@ table {
 		<h2>게시물 내용 수정</h2>
 			<form action="/Board/Update" method="post">
 				<input type="hidden" name="bno" value="${boardVo.bno}">
-				<!-- <input type="hidden" name="menu_id" value="${boardVo.menu_id}"> -->
+				<input type="hidden" name="menu_id" value="${boardVo.menu_id}">
 				<table id="writeform">
 					<tr>
 						<td>글번호</td>
