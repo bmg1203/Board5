@@ -157,6 +157,8 @@ public class BoardController {
 	}
 	
 	//게시글 수정
+	/*
+	//내가 작성한 내용, update2.jsp로 연결하면 됨
 	@RequestMapping("/UpdateForm")
 	public ModelAndView updateForm(BoardVo boardVo) {
 		//넘어온 bno 설정
@@ -167,7 +169,7 @@ public class BoardController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("boardVo", vo);
-		mv.setViewName("/board/update");
+		mv.setViewName("/board/update2");
 		
 		return mv;
 	}
@@ -181,6 +183,36 @@ public class BoardController {
 		
 		return mv;
 	}
+	*/
+	@RequestMapping("/UpdateForm")
+	public ModelAndView updateForm(int bno, String menu_id) {	
+		//메뉴 목록 조회
+		List<MenuVo> menuList = menuMapper.getMenuList();
+		
+		//bno로 조회한 BoardVo 객체
+		BoardVo vo = boardMapper.getBoard(bno);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("menu_id", menu_id);
+		mv.addObject("boardVo", vo);
+		mv.addObject("menuList", menuList);
+		mv.setViewName("/board/update");
+		
+		return mv;
+	}
+	@RequestMapping("/Update")
+	public ModelAndView update(BoardVo boardVo) {	
+		log.info("boardVo : {}", boardVo);
+		boardMapper.updateBoard(boardVo);
+		
+		String menu_id = boardVo.getMenu_id();
+		//System.out.println(menu_id);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/Board/List?menu_id=" + menu_id);
+		
+		return mv;
+	}
 	
 	//게시글 삭제
 	@RequestMapping("/Delete")
@@ -188,7 +220,7 @@ public class BoardController {
 		boardMapper.deleteBoard(boardVo);
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/Board/List?menu_id=" + boardVo.getMenu_id());
+		mv.setViewName("redirect:/Board/View?menu_id=" + boardVo.getMenu_id());
 		
 		return mv;
 	}

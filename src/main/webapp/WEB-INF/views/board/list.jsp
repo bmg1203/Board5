@@ -83,7 +83,7 @@
 				<tr>
 					<td>${boardVo.bno}</td>
 					<td>
-						<a href="/Board/View?bno=${boardVo.bno}">
+						<a href="/Board/View?bno=${boardVo.bno}"> <!-- ?menu_id=${menu_id} 이부분은 없어도 있어도 가능 -->
 							${boardVo.title}
 						</a>
 					</td>
